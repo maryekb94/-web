@@ -1,0 +1,7 @@
+{% extends "feedback.jinja2" %}
+{% block feedback_content %}
+<h3>
+{% if success_report %}<span class="label label-success">{{ success_report }}</span>{% endif %}
+{% if error_report %}<span class="label label-danger">{{ error_report }}</span>{% endif %}
+</h3>
+{% endblock %}

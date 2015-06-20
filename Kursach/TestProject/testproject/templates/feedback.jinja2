@@ -1,0 +1,21 @@
+{% extends "base.jinja2" %}
+{% block content %}
+<h1> Форма обратной связи</h1>
+{% block feedback_content %}
+<form method="POST">
+    <table class="table">
+        <tr>
+            <th>E-Mail</th><td><input name="email" type="email"></td>
+        </tr>
+        <tr>
+            <th>Тема</th><td><input name="subject" type="text"></td>
+        </tr>
+        <tr>
+            <th>Текст письма</th><td><textarea maxlength="500" cols="50" rows="10" name="message"></textarea></td>
+        </tr>
+        <tr><th></th><td><input type="submit" value="Отправить письмо"></td></tr>
+    </table>
+</form>
+{% endblock %}
+{% endblock %}
+

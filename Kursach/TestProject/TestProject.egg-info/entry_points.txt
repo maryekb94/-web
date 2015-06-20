@@ -1,0 +1,5 @@
+      [paste.app_factory]
+      main = testproject:main
+      [console_scripts]
+      initialize_TestProject_db = testproject.scripts.initializedb:main
+      

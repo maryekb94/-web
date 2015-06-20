@@ -1,0 +1,23 @@
+{% extends "base.jinja2" %}
+{% block content %}
+<form method="GET">
+    <select name="category_filter">
+        <option value="">Все</option>
+        {% for option in categories %}
+        <option {% if selected_category==option %}selected {% endif %}value="{{ option.id }}">{{ option.name }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Применить фильтр" />
+</form>
+<table class="table">
+<tr>
+<th>Изображение</th><th>Название товара</th><th>Цена</th>
+</tr>
+{% for good in goods %}
+<tr>
+<td> <img src="/static/{{ good.image_name }}" /></td>
+<td> <a href="/good/{{ good.id }}">{{ good.name }}<a> </td>
+<td> {{ good.price }} RUB </td>
+</tr>
+{% endfor %}
+{% endblock %}

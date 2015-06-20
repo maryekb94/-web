@@ -1,0 +1,25 @@
+{% extends "base.jinja2" %}
+{% block content %}
+<table class="table">
+<tr>
+    <td width="300"><img class="img-thumbnail" style="width: 250px; height: 300px;" src="/static/{{ good.image_name }}" /></td>
+    <td>
+        <table class="table">
+            <tr><td width="150">Название</td><td>{{ good.name }}</td></tr>
+            <tr><td width="150">Категория</td><td>{{ good.category.name }}</td></tr>
+            <tr>
+                <td width="150">Производитель</td>
+                <td>
+                    {{ good.manufacturer.name }}<br/>
+                    <div class="man-info">{{ good.manufacturer.info }}</div>
+                </td>
+            </tr>
+            <tr><td width="150">Вкус</td><td>{{ good.taste }}</td></tr>
+            <tr><td width="150">Доступен</td><td>{% if good.available %}Да{% else %}Нет{% endif %}</td></tr>
+            <tr><td width="150">Цена</td><td>{{ good.price }} RUB</td></tr>
+            <tr><td width="150">Вес</td><td>{{ good.weight }} КГ</td></tr>
+        </table>
+    </td>
+</tr>
+</table>
+{% endblock %}
